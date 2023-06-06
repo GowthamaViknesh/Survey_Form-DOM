@@ -1,0 +1,13 @@
+body{
+  font-family: 'Raleway', sans-serif;
+ background-color: rgb(71, 69, 69);
+  color: white;
+}
+.modal-body .mb-3 {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.modal-body select {
+  text-align: left;
+}

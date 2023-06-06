@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form|DOM Manipulation</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="./style.css">
+  </head>
+<body>
+ <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4 " src="./Survey.png" alt="logo" width="100" height="100" style="border-radius:50px">
+    <h2 class="display-5 fw-bold text-body-emphasis">Survey Form</h2>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly design and customize responsive Survey Form.</p>
+   
+  <!-- Button trigger modal -->
+  <div class="mb-3">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Take Survey
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter the Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="firstname" class="form-label">FirstName</label>
+          <input type="text" class="form-control" id="firstName" 
+          placeholder="FirstName" onchange="handleInput(this)">
+        </div>
+        <div class="mb-3">
+          <label for="LastName" class="form-label">LastName</label>
+          <input type="text" class="form-control" id="lastName" 
+          placeholder="LastName" onchange="handleInput(this)">
+        </div>
+        <div class="mb-3">
+          <label for="Address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" 
+          placeholder="Address" onchange="handleInput(this)">
+        </div>
+        <div class="mb-3">
+          <label for="Pincode" class="form-label" >Pincode</label>
+          <input type="text" class="form-control" id="pincode" 
+          placeholder="Pincode" onchange="handleInput(this)">
+        </div>
+        <div class="mb-3"> 
+        <div class="form-check">
+          <input class="form-check-input" type="radio" 
+          name="gender" id="Male"
+           onchange="handleInput(this)">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio"
+           name="gender" id="female" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" 
+          name="gender" id="trangender" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexRadioDefault2">
+            TransGender
+          </label>
+        </div>
+        </div>
+        <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" 
+          type="checkbox" value="checked" id="southIndian" name="foodType" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexCheckDefault">
+            SouthIndian
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="checked" 
+          id="northIndian"  name="foodType" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexCheckChecked">
+            NorthIndian
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" 
+          value="checked"  name="foodType" id="americano"  onchange="handleInput(this)">
+          <label class="form-check-label" for="flexCheckChecked">
+            Americano
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox"
+           value="checked" name="foodType" id="canadian" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexCheckChecked">
+            Canadian
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox"
+           value="checked" name="foodType" id="mexicano" onchange="handleInput(this)">
+          <label class="form-check-label" for="flexCheckChecked">
+            Mexicano
+          </label>
+        </div>
+      </div>
+        <div class="mb-3">
+        <select  id="state" class="form-select" aria-label="Default select example" onchange="handleInput(this)">
+          <option selected>State</option>
+          <option value="tamilnadu">Tamilnadu</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="bengaluru">Bengaluru</option>
+          <option value="andharaPradesh">AndharaPradesh</option>
+          <option value="delhi">Delhi</option>
+          <option value="kashmir">Kashmir</option>
+          <option value="rajasthan">Rajasthan</option>
+        </select>
+</div>
+<div class="mb-3">
+  <select class="form-select" id="country"
+  aria-label="Default select example" onchange="handleInput(this)">
+    <option selected>Country</option>
+    <option value="India">India</option>
+    </select>
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary" onclick="handleSave();">Save changes</button>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Firstname</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Food Type</th>
+          <th scope="col">Address</th>
+          <th scope="col">Pincode</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
